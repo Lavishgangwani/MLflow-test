@@ -90,7 +90,7 @@ if __name__ == "__main__":
             remote_server_url = "https://dagshub.com/Lavishgangwani/MLflow-test.mlflow"
             mlflow.set_tracking_uri(remote_server_url)
     
-            dagshub.init(repo_owner='Lavishgangwani', repo_name='MLflow-test', mlflow=True)
+            #dagshub.init(repo_owner='Lavishgangwani', repo_name='MLflow-test', mlflow=True)
  
             tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
