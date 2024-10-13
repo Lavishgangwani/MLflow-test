@@ -21,7 +21,7 @@ export MLFLOW_TRACKING_PASSWORD=<your_dagshub_token>
 Once the environment variables are set, you can run the `script.py` to start training and tracking the machine learning model:
 
 ```bash
-python script.py
+python example.py
 ```
 
 ### Project Overview
@@ -55,5 +55,3 @@ To view the experiment and model details, navigate to your **MLflow tracking ser
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
-
-This README gives a quick overview of how to run the project, what it does, and how to track your machine learning experiments on DagsHub using MLflow. Let me know if you'd like to adjust any details!
