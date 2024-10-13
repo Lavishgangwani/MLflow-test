@@ -12,6 +12,7 @@ import mlflow.sklearn
 import requests
 import io
 import logging
+import dagshub
 
 # Set up basic logging
 logging.basicConfig(level=logging.WARN)
@@ -86,9 +87,11 @@ if __name__ == "__main__":
             mlflow.log_metric("r2", r2)
 
             # Log the model
-            #remote_server_url = "https://dagshub.com/Lavishgangwani/MLFLOW-TEST.mlflow"
-            #mlflow.set_tracking_uri(remote_server_url)
-            
+            remote_server_url = "https://dagshub.com/Lavishgangwani/MLflow-test.mlflow"
+            mlflow.set_tracking_uri(remote_server_url)
+    
+            dagshub.init(repo_owner='Lavishgangwani', repo_name='MLflow-test', mlflow=True)
+ 
             tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
             # Model registry only works with non-file stores
