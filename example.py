@@ -63,6 +63,11 @@ if __name__ == "__main__":
         alpha = float(sys.argv[1]) if len(sys.argv) > 1 else 0.5
         l1_ratio = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
 
+        # Log the model
+        remote_server_url = "https://dagshub.com/Lavishgangwani/MLflow-test.mlflow"
+        mlflow.set_tracking_uri(remote_server_url)
+    
+
         # Start the MLflow run
         with mlflow.start_run():
             lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=42)
@@ -86,9 +91,6 @@ if __name__ == "__main__":
             mlflow.log_metric("mae", mae)
             mlflow.log_metric("r2", r2)
 
-            # Log the model
-            remote_server_url = "https://dagshub.com/Lavishgangwani/MLflow-test.mlflow"
-            mlflow.set_tracking_uri(remote_server_url)
     
             #dagshub.init(repo_owner='Lavishgangwani', repo_name='MLflow-test', mlflow=True)
  
